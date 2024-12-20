@@ -209,7 +209,7 @@
         (let
             ((issuer-data (unwrap! (get-issuer-details issuer) err-not-found))
              (current-score (get reputation-score issuer-data))
-             (new-score (+ current-score (if (> score-change i0)
+             (new-score (+ current-score (if (> score-change 0)
                                            (to-uint score-change)
                                            u0))))
             (ok (map-set AuthorizedIssuers
